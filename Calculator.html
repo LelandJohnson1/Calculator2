@@ -1,0 +1,1737 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+
+<script src="jquery.js"></script>
+<script src="jquery-ui-1.12.1/jquery-ui-1.12.1/jquery-ui.js"></script>
+
+<style type="text/css">
+
+.grid {background-color: red;
+
+width:600px;
+height:100px;
+
+position:relative;
+left:40px;
+top:100px;
+border-width:2px 2px 2px 2px;
+border-style:solid;
+border-color: red;
+
+}
+
+
+
+
+.td{
+
+background-color:black;
+height:150px;
+width:50px;
+padding-left: 50px;
+border-width:2px 2px 2px 2px;
+border-style:solid;
+border-color: red;
+
+
+
+
+}
+
+
+
+
+#box { background-color:gray;
+
+width:593px;
+left:40px;
+top:100px;
+height:120px;
+position:relative;
+border-width:4px 4px 4px 4px;
+border-style:solid;
+border-color:red;
+
+
+}
+
+
+
+.numbers{
+
+background-color:black;
+height:150px;
+width:50px;
+padding-left: 50px;
+
+border-width:2px 2px 2px 2px;
+border-style:solid;
+border-color: red;
+}
+
+
+p { color:white;
+font-family: balboa-plus-fill, sans-serif;
+font-weight: 900;
+font-size: 48px;
+position:relative;
+right:7px;
+
+
+}    
+
+
+</style>
+</head>
+<body>
+
+<div id="box" >
+
+</div>
+
+<script>
+
+if (typeof jQuery=="undefined") {alert ("Jquery is null");
+
+}else { alert("Good");}
+
+var body=document.getElementsByTagName("body")[0];
+
+
+var creategrid=function(){
+
+
+g=0;
+var arr=[0,1,2,3,4,5,6,7,8,9,"+","-","/","*","=","clear"];
+
+var grid=document.createElement("table");
+grid.className="grid";
+grid.setAttribute("id","gridd");
+
+var tbody=document.createElement("tbody");
+tbody.className="tbody";
+
+for(i=0;i<4;i++) { 
+
+var tr=grid.appendChild(document.createElement("tr"));
+tr.className="tr";
+
+for(j=0;j<4;j++) {
+
+
+var td=tr.appendChild(document.createElement("td"));
+
+td.className="td";
+
+
+
+for(m=0;m<1;m++) { var p= td.appendChild(document.createElement("p"));
+p.className="para";
+
+
+}
+
+
+
+if (g<17) { 
+
+var lose=p.innerHTML+=arr[g];
+
+
+
+
+g++;
+td.addEventListener("click", function () {
+
+
+document.getElementById("box").innerHTML+=this.textContent;
+
+});  
+
+
+}
+
+
+}
+
+tbody.appendChild(tr);
+
+
+}
+
+
+
+grid.appendChild(tbody);
+
+body.appendChild(grid);
+
+
+}
+//CREATE DIV FOR EQUAL SIGN TO EQUAL BELOW FUNCTION!!!!!!
+
+creategrid();
+//Start of Actual non grid code
+var alot=function (number) {
+
+
+shop+=number;
+fin=arr.push(number);
+
+
+console.log(arr);
+console.log(shop);
+
+
+}
+
+
+var most=function(total,num){
+return total+num;
+
+
+
+
+}
+var win=0;
+
+var aid=0;
+var subtract=0;
+var multiply=0;
+var divide=0;
+var fin;
+var arr=[];
+var finish=0;
+var shop="";
+var o=1;
+var t=1;
+var tree=1;
+var fo=1;
+var nhvm=2;
+var sion;
+var nhm=0;
+var x="";
+var y="";
+
+
+var many=false;
+var type=0;
+//use this to create id for symbols
+
+
+var zero=document.getElementsByTagName("td")[0];
+
+zero.className="numbers";
+
+zero.onclick=function(){
+
+
+if(many==true) {
+
+
+console.log(type);
+
+
+alot ("0");
+//PUT IN OTHEER NUMBERS!!!!
+}
+
+
+
+else if(type>0){
+
+y+="0";
+
+
+}
+
+else if(type==0){
+
+x+="0";
+console.log(x);
+
+
+}
+
+
+}
+
+
+var one=document.getElementsByTagName("td")[1];
+
+one.className="numbers";
+
+one.onclick=function(){
+
+if(many==true) {
+
+
+console.log(type);
+
+
+alot ("1");
+//PUT IN OTHEER NUMBERS!!!!
+}
+
+
+else if(type>0){
+
+y+="1";
+console.log(y);
+console.log(x);
+
+}
+
+
+
+else if(type==0){
+
+x+="1";
+console.log(x);
+
+
+}
+
+
+}
+
+
+var two=document.getElementsByTagName("td")[2];
+
+two.className="numbers";
+
+
+
+
+two.onclick=function(){
+if(many==true) {
+
+
+console.log(type);
+
+
+alot ("2");
+//PUT IN OTHEER NUMBERS!!!!
+}
+
+else if(type>0){
+
+y+="2";
+
+console.log(y);
+console.log(x);
+}
+
+else if(type==0){
+
+x+="2";
+console.log(x);
+
+
+}
+
+}
+
+
+var three=document.getElementsByTagName("td")[3];
+
+three.className="numbers";
+
+
+
+three.onclick=function(){
+
+if(many==true) {
+
+
+console.log(type);
+
+
+alot ("3");
+//PUT IN OTHEER NUMBERS!!!!
+}
+
+else if(type>0){
+
+y+="3";
+}
+else if(type==0){
+
+x+="3";
+console.log(x);
+
+
+}
+}
+
+
+
+
+var four=document.getElementsByTagName("td")[4];
+
+four.className="numbers";
+
+
+
+
+
+four.onclick=function(){
+if(many==true) {
+
+
+console.log(type);
+
+
+alot ("4");
+//PUT IN OTHEER NUMBERS!!!!
+}
+
+
+else if(type>0){
+
+y+="4";  
+}
+
+else if(type==0){
+
+x+="4";
+console.log(x);
+
+
+}
+
+
+
+
+
+
+}
+
+
+var five=document.getElementsByTagName("td")[5];
+
+five.className="numbers";
+
+five.onclick=function(){
+
+
+if(many==true) {
+
+
+console.log(type);
+
+
+alot ("5");
+//PUT IN OTHEER NUMBERS!!!!
+}
+
+
+
+
+else if(type>0){
+
+y+="5";  
+}
+
+else if(type==0){
+
+x+="5";
+console.log(x);
+
+
+}
+
+
+
+
+
+}
+
+
+var six=document.getElementsByTagName("td")[6];
+
+six.className="numbers";
+
+
+
+six.onclick=function(){
+
+
+
+if(many==true) {
+
+
+console.log(type);
+
+
+alot ("6");
+//PUT IN OTHEER NUMBERS!!!!
+}
+
+
+else if(type>0){
+
+y+="6";
+console.log(y);
+}
+
+else if(type==0){
+
+x+="6";
+console.log(x);
+
+
+}
+
+}
+
+
+
+var seven=document.getElementsByTagName("td")[7];
+
+seven.className="numbers";
+
+
+
+seven.onclick=function(){
+
+if(many==true) {
+
+
+console.log(type);
+
+
+alot ("7");
+//PUT IN OTHEER NUMBERS!!!!
+}
+
+
+else if(type>0){
+
+y+="7";   
+}
+
+else if(type==0){
+
+x+="7";
+console.log(x);
+
+
+}
+
+
+
+
+}
+
+
+var eight=document.getElementsByTagName("td")[8];
+
+eight.className="numbers";
+
+
+eight.onclick=function(){
+
+
+
+if(many==true) {
+
+
+console.log(type);
+
+
+alot ("8");
+//PUT IN OTHEER NUMBERS!!!!
+}
+
+
+
+else if(type>0){
+
+y+="8";   
+}
+
+
+else if(type==0){
+
+x+="8";
+console.log(x);
+
+
+}
+
+
+}
+
+
+
+var nine=document.getElementsByTagName("td")[9];
+
+nine.className="numbers";
+
+
+
+
+nine.onclick=function(){
+
+
+
+if(many==true) {
+
+
+console.log(type);
+
+
+alot ("9");
+//PUT IN OTHEER NUMBERS!!!!
+}
+
+
+else if(type>0){
+y+="9";  
+}
+
+else if(type==0){
+
+x+="9";
+console.log(x);
+
+
+}
+
+
+}
+
+
+var add=document.getElementsByTagName("td")[10];
+first=add.setAttribute("id","plus");
+
+
+var sub=document.getElementsByTagName("td")[11];
+second=sub.setAttribute("id","sub");
+
+var dived=document.getElementsByTagName("td")[12];
+third=dived.setAttribute("id","dived");
+
+var multi=document.getElementsByTagName("td")[13];
+fourth=multi.setAttribute("id","multi");
+
+var enter=document.getElementsByTagName("td")[14];
+fifth=enter.setAttribute("id","enter");
+
+var clear=document.getElementsByTagName("td")[15];
+sixth=clear.setAttribute("id","clear");
+
+
+document.getElementById("plus").onclick=function(){
+
+
+type=1;
+nhm+=1;
+console.log(type);
+console.log(nhm);
+
+
+
+if (nhm==2) {
+if ( y!=0 && subtract>=1){
+
+win=Math.round(x)-Math.round(y);
+console.log(win);
+console.log(type);
+
+}
+
+if (y!=0 && aid>=1){
+
+win=Math.round(x)+Math.round(y);
+console.log(win);
+
+}
+
+
+if ( y!=0 && divide>=1){
+
+win=Math.round(x)/Math.round(y);
+console.log(win);
+
+}
+
+
+if ( y!=0 && multiply>=1){
+
+win=Math.round(x)*Math.round(y);
+console.log(win);
+
+}
+
+
+}
+
+
+if (nhm>=2 && shop!=0) {
+
+if (shop!=0 && subtract>=1)
+
+{
+win-=Math.round(shop);
+console.log(win);
+
+
+}                    
+
+
+
+if (shop!=0  && aid>=1)
+
+{
+console.log(shop);
+win+=Math.round(shop);
+console.log(win);
+
+
+}                      
+
+if (shop!=0  && divide>=1)
+
+{
+win/=Math.round(shop);
+console.log(win);
+
+
+}   
+
+
+if (shop!=0 && multiply>=1)
+
+{
+win*=Math.round(shop);
+console.log(win);
+
+
+}                
+
+
+
+}
+
+
+//I CHANGED NHM ON CONDITIONS 
+
+
+if(nhm>1) {
+type=-1;
+many=true;
+
+console.log(arr);
+
+}
+
+
+
+if(nhm>=2){   
+
+
+o=1; 
+console.log(o);
+if ( t> o &&  t >tree &&  t>fo){  
+
+
+sion=arr.reduce(most,"");                             
+console.log(sion);
+finish-=Math.round(sion);
+
+console.log(finish);
+console.log(type);
+arr=[];
+shop="";
+
+
+}
+else if ( o> t &&  o> tree &&  o>fo){  
+
+
+sion=arr.reduce(most,"");
+
+console.log(sion);
+finish+=Math.round(sion);
+
+console.log(finish);
+arr=[];
+shop="";
+}
+else if ( tree> o &&  tree>t &&  tree>fo){  
+
+
+sion=arr.reduce(most,"");
+//FIX THIS
+
+finish/=Math.round(sion);
+console.log(sion);
+console.log(finish);
+arr=[];
+shop="";
+
+
+if(nhm==3&&finish==0){               
+finish+=Math.round(sion);
+console.log(sion);
+console.log(finish);
+arr=[];
+shop="";
+}
+
+}
+
+
+
+
+
+else if ( fo> o &&  fo>tree &&  fo>t){  
+
+
+
+
+
+sion=arr.reduce(most,"");
+
+if(nhm==2&&finish==0){finish=1;}
+finish*=Math.round(sion);
+console.log(sion);
+console.log(finish);
+arr=[];
+shop="";
+}
+
+
+
+else {  sion=arr.reduce(most,"");
+
+console.log(sion);
+finish+=Math.round(sion);
+
+console.log(finish);
+console.log(type);
+arr=[];
+shop="";
+
+
+
+
+
+}
+
+
+o*=nhvm; 
+nhvm++;
+
+console.log(fo); 
+console.log(tree);
+console.log(t);
+console.log(o);
+
+
+
+
+}
+
+aid++;
+
+
+if (aid==1) {
+
+divide=0;
+multiply=0;
+subtract=0;
+
+
+
+}
+
+
+}
+
+
+
+document.getElementById("sub").onclick=function(){
+
+type=2;
+nhm+=1;
+console.log(nhm);
+console.log(t);
+
+
+if (nhm==2) {
+if ( y!=0 && subtract>=1){
+
+win=Math.round(x)-Math.round(y);
+console.log(win);
+
+}
+
+if ( y!=0 && aid>=1){
+
+win=Math.round(x)+Math.round(y);
+console.log(win);
+
+}
+
+if ( y!=0 && divide>=1){
+
+win=Math.round(x)/Math.round(y);
+console.log(win);
+
+}
+
+
+if ( y!=0 && multiply>=1){
+
+win=Math.round(x)*Math.round(y);
+console.log(win);
+
+}
+}
+
+
+
+if (nhm>=2 && shop!=0) {
+
+if (shop!=0 && subtract>=1)
+
+{
+win-=Math.round(shop);
+console.log(win);
+
+
+}                    
+
+
+
+if (shop!=0  && aid>=1)
+
+{
+console.log(shop);
+win+=Math.round(shop);
+console.log(win);
+
+
+}                      
+
+if (shop!=0  && divide>=1)
+
+{
+win/=Math.round(shop);
+console.log(win);
+
+
+}   
+
+
+if (shop!=0 && multiply>=1)
+
+{
+win*=Math.round(shop);
+console.log(win);
+
+
+}                
+
+
+
+}
+
+
+console.log(win);
+console.log(type);
+//if type =1 do x+y
+if(nhm>1) {
+type=-2;
+many=true;
+}
+
+if(nhm>=2){   t=1; 
+
+if ( t> o && t> tree && t> fo){  
+
+
+
+sion=arr.reduce(most,"");
+
+console.log(sion);
+finish-=Math.round(sion);
+
+console.log(finish);
+console.log(type);
+arr=[];
+shop="";
+
+
+
+
+
+}
+else if ( o> t &&  o>tree &&  o>fo){   
+
+
+sion=arr.reduce(most,"");
+
+console.log(sion);
+finish+=Math.round(sion);
+
+console.log(finish);
+arr=[];
+shop="";
+
+
+
+
+
+
+}
+else if ( tree> o &&  tree>t &&  tree>fo){ 
+
+
+
+
+
+sion=arr.reduce(most,"");
+//FIX THIS
+
+finish/=Math.round(sion);
+console.log(sion);
+console.log(finish);
+arr=[];
+shop="";
+
+
+if(nhm==3&&finish==0){               
+finish+=Math.round(sion);
+console.log(sion);
+console.log(finish);
+arr=[];
+shop="";
+}
+
+}
+
+else if ( fo> o &&  fo>tree &&  fo>t){  
+
+
+
+
+
+sion=arr.reduce(most,"");
+
+if(nhm==2&&finish==0){finish=1;}
+finish*=Math.round(sion);
+console.log(sion);
+console.log(finish);
+arr=[];
+shop="";
+}
+
+else {  sion=arr.reduce(most,"");
+
+console.log(sion);
+finish-=Math.round(sion);
+
+console.log(finish);
+console.log(type);
+arr=[];
+shop="";
+
+
+
+
+
+}
+
+t*=nhvm; 
+nhvm++;
+
+
+console.log(fo); 
+console.log(tree);
+console.log(t);
+console.log(o);
+
+
+
+
+
+
+}
+
+subtract++;
+
+if (subtract==1) {
+
+divide=0;
+multiply=0;
+aid=0;
+
+
+
+}
+
+
+
+
+
+}
+
+
+
+
+document.getElementById("dived").onclick=function(){
+
+type=3;
+nhm+=1;
+console.log(type);
+
+if (nhm==2) {
+
+if ( y!=0 && subtract>=1){
+
+win=Math.round(x)-Math.round(y);
+console.log(win);
+
+}
+
+
+if ( y!=0 && aid>=1){
+
+win=Math.round(x)+Math.round(y);
+console.log(win);
+
+}
+
+
+
+if ( y!=0 && divide>=1){
+
+win=Math.round(x)/Math.round(y);
+console.log(win);
+
+}
+
+}
+
+
+
+if (nhm>=2 && shop!=0) {
+
+if (shop!=0 && subtract>=1)
+
+{
+win-=Math.round(shop);
+console.log(win);
+
+
+}                    
+
+
+
+if (shop!=0  && aid>=1)
+
+{
+console.log(shop);
+win+=Math.round(shop);
+console.log(win);
+
+
+}                      
+
+if (shop!=0  && divide>=1)
+
+{
+win/=Math.round(shop);
+console.log(win);
+
+
+}   
+
+
+if (shop!=0 && multiply>=1)
+
+{
+win*=Math.round(shop);
+console.log(win);
+
+
+}                
+
+
+
+}
+
+//if type =1 do x+y
+if(nhm>1) {
+type=-3;
+many=true;
+}
+
+
+
+
+if(nhm>=2){   tree=1; 
+
+if ( t> o &&  t>tree &&  t>fo){ 
+
+
+
+sion=arr.reduce(most,"");
+
+console.log(sion);
+finish-=Math.round(sion);
+
+console.log(finish);
+console.log(type);
+arr=[];
+shop="";
+}
+else if ( o> t &&  o>tree &&  o>fo){  
+
+
+sion=arr.reduce(most,"");
+
+console.log(sion);
+finish+=Math.round(sion);
+
+console.log(finish);
+arr=[];
+shop="";
+}
+else if ( tree> o &&  tree>t &&  tree>fo){ 
+
+
+
+
+
+
+
+
+
+sion=arr.reduce(most,"");
+
+if(nhm==2&&finish==0){finish=1;}
+finish/=Math.round(sion);
+console.log(sion);
+console.log(finish);
+arr=[];
+shop="";
+}
+
+else if ( tree> o &&  tree>t &&  tree>fo){  sion=arr.reduce(most,"");
+//FIX THIS
+
+finish/=Math.round(sion);
+console.log(sion);
+console.log(finish);
+arr=[];
+shop="";
+
+
+
+//WHERES THE MULTIPLICATION?       
+}
+
+
+
+else if(nhm==3&&finish==0){       
+sion=shop;
+finish+=Math.round(sion);
+console.log(sion);
+console.log(finish);
+arr=[];
+shop="";
+}
+
+
+//NOT SURE IF THE MATH WILL WORK FOR THIS ONE FIX
+else if(nhm==2&&sion==null){finish=0;
+
+sion=arr.reduce(most,"");
+
+sion="1";
+console.log(sion);
+finish/=Math.round(sion);
+
+console.log(finish);
+console.log(type);
+arr=[];
+shop="";     } 
+
+
+else{    
+sion=arr.reduce(most,"");
+
+console.log(sion);
+finish/=Math.round(sion);
+
+console.log(finish);
+console.log(type);
+arr=[];
+shop="";
+}
+
+
+
+
+}
+
+tree*=nhvm; 
+nhvm++;
+
+
+divide++;
+
+if (divide==1) {
+
+aid=0;
+multiply=0;
+subtract=0;
+
+
+
+}
+
+console.log(tree);  
+
+
+
+
+
+}
+
+
+document.getElementById("multi").onclick=function(){
+
+type=4;
+nhm+=1;
+console.log(type);
+//if type =1 do x+y
+
+if (nhm==2) {
+
+if ( y!=0 && subtract>=1){
+
+win=Math.round(x)-Math.round(y);
+console.log(win);
+
+}
+
+
+
+if ( y!=0 && aid>=1){
+
+win=Math.round(x)+Math.round(y);
+console.log(win);
+
+}
+
+if ( y!=0 && divide>=1){
+
+win=Math.round(x)/Math.round(y);
+console.log(win);
+
+}
+
+if ( y!=0 && multiply>=1){
+
+win=Math.round(x)*Math.round(y);
+console.log(win);
+
+}
+
+
+}
+
+
+
+
+
+
+if (nhm>=2 && shop!=0) {
+
+if (shop!=0 && subtract>=1)
+
+{
+win-=Math.round(shop);
+console.log(win);
+
+
+}                    
+
+
+
+if (shop!=0  && aid>=1)
+
+{
+console.log(shop);
+win+=Math.round(shop);
+console.log(win);
+
+
+}                      
+
+if (shop!=0  && divide>=1)
+
+{
+win/=Math.round(shop);
+console.log(win);
+
+
+}   
+
+
+if (shop!=0 && multiply>=1)
+
+{
+win*=Math.round(shop);
+console.log(win);
+
+
+}                
+
+
+
+}
+
+
+if(nhm>1) {
+type=-4;
+many=true;
+}
+
+
+
+
+if(nhm>=2){   fo=1; 
+
+if ( t> o &&  t>tree &&  t>fo){ 
+
+
+
+
+
+
+
+
+
+sion=arr.reduce(most,"");
+
+console.log(sion);
+finish-=Math.round(sion);
+
+console.log(finish);
+console.log(type);
+arr=[];
+shop="";
+}
+else if ( o> t &&  o>tree &&  o>fo){  
+
+
+
+
+
+
+sion=arr.reduce(most,"");
+
+console.log(sion);
+finish+=Math.round(sion);
+
+console.log(finish);
+arr=[];
+shop="";
+}
+else if ( tree> o &&  tree>t &&  tree>fo){ 
+
+
+
+
+
+
+
+sion=arr.reduce(most,"");
+//FIX THIS
+
+finish/=Math.round(sion);
+console.log(sion);
+console.log(finish);
+arr=[];
+shop="";
+
+
+if(nhm==3&&finish==0){               
+finish+=Math.round(sion);
+console.log(sion);
+console.log(finish);
+arr=[];
+shop="";
+}
+
+}
+
+
+
+
+else if ( fo> o &&  fo>tree &&  fo>t){  
+
+
+
+
+
+sion=arr.reduce(most,"");
+
+finish*=Math.round(sion);
+console.log(sion);
+console.log(finish);
+arr=[];
+shop="";
+}
+
+
+
+
+
+else if(nhm==2&&sion==null){
+
+sion=arr.reduce(most,"");
+finish=1;
+sion="1";
+console.log(finish);
+console.log(sion);
+finish*=Math.round(sion);
+
+console.log(finish);
+console.log(type);
+arr=[];
+shop="";     } 
+
+
+
+
+
+else { 
+
+
+sion=arr.reduce(most,"");
+
+console.log(sion);
+finish*=Math.round(sion);
+
+console.log(finish);
+console.log(type);
+arr=[];
+shop="";
+
+
+
+
+
+}
+
+fo*=nhvm; 
+nhvm++;
+
+
+
+
+console.log(fo); 
+console.log(tree);
+console.log(t);
+console.log(o);
+
+
+
+} 
+
+
+
+multiply++;
+
+
+if (multiply==1) {
+
+divide=0;
+aid=0;
+subtract=0;
+
+
+
+}
+
+
+
+}
+
+
+
+
+document.getElementById("enter").onclick=function(){
+
+
+
+if (type==1 && nhm==1 && y!=0){
+
+win=Math.round(x)+Math.round(y);
+console.log(win);
+d=win;
+
+document.getElementById("box").innerHTML=d; 
+console.log(d); 
+
+}
+
+else if (type==2 && nhm==1 && y!=0){
+
+win=Math.round(x)-Math.round(y);
+console.log(win);
+d=win;
+
+document.getElementById("box").innerHTML=d;
+console.log(d); 
+}
+
+else if (type==3 &&nhm==1 &&y!=0){
+
+win=Math.round(x)/Math.round(y);
+console.log(win);
+d=win;
+
+document.getElementById("box").innerHTML=d;
+console.log(d); 
+}
+
+else if (type==4 && nhm==1 &&y!=0){
+
+win=Math.round(x)*Math.round(y);
+console.log(win);
+d=win;
+
+document.getElementById("box").innerHTML=d; 
+console.log(d); 
+}
+
+
+
+else if ( type==-1 && nhm>=2 && shop!=0)
+
+{
+console.log(win);
+console.log(shop);
+win+=Math.round(shop);
+console.log(shop);
+
+console.log(win);
+d=win;
+
+document.getElementById("box").innerHTML=d;
+console.log(d); 
+}
+
+
+
+else if ( type==-2 && nhm>=2 && shop!=0)
+
+{
+console.log(win);
+console.log(shop);
+win-=Math.round(shop);
+console.log(x);
+console.log(y);
+console.log(win);
+d=win;
+
+document.getElementById("box").innerHTML=d;
+console.log(d); 
+}
+else if ( type==-3 && nhm>=2 && shop!=0)
+
+{
+win/=Math.round(shop);
+
+console.log(win);
+d=win;
+
+document.getElementById("box").innerHTML=d;
+console.log(d); 
+}
+
+else if ( type==-4 && nhm>=2 && shop!=0)
+
+{
+win*=Math.round(shop);
+
+console.log(win);
+d=win;
+
+document.getElementById("box").innerHTML=d;
+console.log(d); 
+} 
+
+
+
+
+else if(type==0){
+
+
+document.getElementById("box").innerHTML="Put in a number Fool!";
+
+}  
+
+
+else {
+d=win;
+
+document.getElementById("box").innerHTML=d;
+console.log(d); 
+console.log(x);
+console.log(y);
+
+
+
+}
+
+
+
+
+console.log(finish);
+
+}
+
+document.getElementById("clear").onclick=function(){
+
+type=0;
+x="";
+y="";
+shop="";
+nhm=0;
+many=false;
+finish=0;
+arr=[];
+nhvm=2;
+var o=1;
+var t=1;
+var tree=1;
+var fo=1;
+aid=0;
+subtract=0;
+multiply=0;
+divide=0;
+
+win=0;
+d=0;
+
+document.getElementById("box").innerHTML="";
+console.log(x);
+console.log(y);
+console.log(type);
+
+}
+</script>
+</body>
+</html>
+
